@@ -7,6 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Box from '@material-ui/core/Box';
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -73,7 +74,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const NavigationBar = () => {
-    const classes = useStyles();
+
+  let history = useHistory();
+  function handleClick(locate) {
+    history.push(`/${locate}`);
+  }
+  const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -125,12 +131,12 @@ const NavigationBar = () => {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
+        <IconButton onClick={()=>handleClick('home')} aria-label="show 4 new mails" color="inherit">
             Home
         </IconButton>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
+        <IconButton onClick={()=>handleClick('destination')} aria-label="show 4 new mails" color="inherit">
             Destination
         </IconButton>
       </MenuItem>
@@ -145,7 +151,7 @@ const NavigationBar = () => {
         </IconButton>
       </MenuItem>
       <MenuItem>
-        <IconButton aria-label="show 4 new mails" color="inherit">
+        <IconButton onClick={()=>handleClick('login')} aria-label="show 4 new mails" color="inherit">
                 <Box bgcolor="secondary.main" color="secondary.contrastText" p={2}>
                     Login
                 </Box>
@@ -156,7 +162,7 @@ const NavigationBar = () => {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static">
+      <AppBar position="static" style={{border:'solid blue 2px'}}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -168,10 +174,10 @@ const NavigationBar = () => {
           </IconButton>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
-            <IconButton aria-label="show 4 new mails" color="inherit">
+            <IconButton onClick={()=>handleClick('home')} aria-label="show 4 new mails" color="inherit">
                 Home
             </IconButton>
-            <IconButton aria-label="show 4 new mails" color="inherit">
+            <IconButton onClick={()=>handleClick('destination')} aria-label="show 4 new mails" color="inherit">
                 Destination
             </IconButton>
             <IconButton aria-label="show 4 new mails" color="inherit">
@@ -180,7 +186,7 @@ const NavigationBar = () => {
             <IconButton aria-label="show 4 new mails" color="inherit">
                 Contact
             </IconButton>
-            <IconButton aria-label="show 4 new mails" color="inherit">
+            <IconButton onClick={()=>handleClick('login')} aria-label="show 4 new mails" color="inherit">
                 <Box bgcolor="secondary.main" color="secondary.contrastText" p={2}>
                     Login
                 </Box>

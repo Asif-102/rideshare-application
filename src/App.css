@@ -1,7 +1,21 @@
 .App {
-  text-align: center;
+    background-image: url('../src/components/Images/Bg.png');
+    height: 100vh;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
 }
-
+@media only screen and (max-width: 600px) {
+  .App {
+      background-image: url('../src/components/Images/Bg.png');
+      height: 200vh;
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-attachment: fixed;
+  }
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
