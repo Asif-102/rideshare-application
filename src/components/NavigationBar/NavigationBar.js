@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -8,6 +8,7 @@ import Menu from '@material-ui/core/Menu';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import Box from '@material-ui/core/Box';
 import { useHistory } from "react-router-dom";
+import { UserContext } from '../../App';
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -75,6 +76,7 @@ const useStyles = makeStyles((theme) => ({
 
 const NavigationBar = () => {
 
+  const [user, setUser] = useContext(UserContext);
   let history = useHistory();
   function handleClick(locate) {
     history.push(`/${locate}`);
@@ -152,9 +154,7 @@ const NavigationBar = () => {
       </MenuItem>
       <MenuItem>
         <IconButton onClick={()=>handleClick('login')} aria-label="show 4 new mails" color="inherit">
-                <Box bgcolor="secondary.main" color="secondary.contrastText" p={2}>
-                    Login
-                </Box>
+            <span style={{color:'orange'}}>{user.displayName || 'Login'}</span>
         </IconButton>
       </MenuItem>
     </Menu>
@@ -162,7 +162,7 @@ const NavigationBar = () => {
 
   return (
     <div className={classes.grow}>
-      <AppBar position="static" style={{border:'solid blue 2px'}}>
+      <AppBar position="static" style={{height:'70px'}}>
         <Toolbar>
           <IconButton
             edge="start"
@@ -187,9 +187,7 @@ const NavigationBar = () => {
                 Contact
             </IconButton>
             <IconButton onClick={()=>handleClick('login')} aria-label="show 4 new mails" color="inherit">
-                <Box bgcolor="secondary.main" color="secondary.contrastText" p={2}>
-                    Login
-                </Box>
+              <span style={{color:'orange'}}>{user.displayName || 'Login'}</span>
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
