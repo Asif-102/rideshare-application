@@ -6,7 +6,6 @@ import IconButton from '@material-ui/core/IconButton';
 import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import MoreIcon from '@material-ui/icons/MoreVert';
-import Box from '@material-ui/core/Box';
 import { useHistory } from "react-router-dom";
 import { UserContext } from '../../App';
 
@@ -187,7 +186,7 @@ const NavigationBar = () => {
                 Contact
             </IconButton>
             <IconButton onClick={()=>handleClick('login')} aria-label="show 4 new mails" color="inherit">
-              <span style={{color:'orange'}}>{user.displayName || 'Login'}</span>
+              <span style={{color:'orange'}}>{(user.email)?.split('@')[0] || 'Login'}</span>
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>
