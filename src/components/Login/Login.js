@@ -145,8 +145,8 @@ function Login() {
     return (
         <div className="Login">
             {
-                !user.isSignedIn ? <button onClick={handleSignIn}><FcGoogle /> Sign in</button>
-                    : <button onClick={handleSignOut}><FcGoogle /> Sign Out</button>
+                !user.isSignedIn ? <button onClick={handleSignIn} className="btn btn-light"><FcGoogle /> Sign in</button>
+                    : <button onClick={handleSignOut} className="btn btn-light"><FcGoogle /> Sign Out</button>
             }
             {
                 user.isSignedIn && <div>
@@ -168,7 +168,7 @@ function Login() {
                 <br />
                 <input type="password" onBlur={handleBlur} name="password" placeholder="Your Password" required />
                 <br />
-                <input type="submit" value={newUser ? 'Sign up' : 'Sign in'} />
+                <input type="submit" value={newUser ? 'Sign up' : 'Sign in'} className="btn btn-primary" />
             </form>
             <p style={{ color: 'red' }}>{user.error}</p>
             {
