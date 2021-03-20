@@ -153,7 +153,7 @@ const NavigationBar = () => {
       </MenuItem>
       <MenuItem>
         <IconButton onClick={()=>handleClick('login')} aria-label="show 4 new mails" color="inherit">
-            <span style={{color:'orange'}}>{user.displayName || 'Login'}</span>
+            <span style={{color:'orange'}}>{(user.email)?.split('@')[0] || 'Login'}</span>
         </IconButton>
       </MenuItem>
     </Menu>
