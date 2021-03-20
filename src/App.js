@@ -15,10 +15,10 @@ import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 export const UserContext = createContext()
 
 function App() {
-  const [user, setUser] = useState({})
+  const [loggedInUser, setLoggedInUser] = useState({})
   return (
     <div className="App">
-      <UserContext.Provider className="App" value={[user, setUser]}>
+      <UserContext.Provider className="App" value={[loggedInUser, setLoggedInUser]}>
         <Router>
           <NavigationBar/>
           <Switch>

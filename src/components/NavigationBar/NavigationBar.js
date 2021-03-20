@@ -75,7 +75,7 @@ const useStyles = makeStyles((theme) => ({
 
 const NavigationBar = () => {
 
-  const [user, setUser] = useContext(UserContext);
+  const [loggedInUser, setLoggedInUser] = useContext(UserContext);
   let history = useHistory();
   function handleClick(locate) {
     history.push(`/${locate}`);
@@ -153,7 +153,7 @@ const NavigationBar = () => {
       </MenuItem>
       <MenuItem>
         <IconButton onClick={()=>handleClick('login')} aria-label="show 4 new mails" color="inherit">
-            <span style={{color:'orange'}}>{(user.email)?.split('@')[0] || 'Login'}</span>
+            <span style={{color:'orange'}}>{(loggedInUser.email)?.split('@')[0] || 'Login'}</span>
         </IconButton>
       </MenuItem>
     </Menu>
@@ -186,7 +186,7 @@ const NavigationBar = () => {
                 Contact
             </IconButton>
             <IconButton onClick={()=>handleClick('login')} aria-label="show 4 new mails" color="inherit">
-              <span style={{color:'orange'}}>{(user.email)?.split('@')[0] || 'Login'}</span>
+              <span style={{color:'orange'}}>{(loggedInUser.email)?.split('@')[0] || 'Login'}</span>
             </IconButton>
           </div>
           <div className={classes.sectionMobile}>

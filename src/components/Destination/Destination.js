@@ -1,3 +1,4 @@
+import './Destination.css';
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { useParams } from 'react-router';
@@ -43,7 +44,7 @@ const Destination = () => {
     }
 
     return (
-        <div style={{ backgroundColor: 'white', height: '90vh' }}>
+        <div style={{ backgroundColor: 'white', height: '90vh' }} className="Destination">
             {/* <h1>This is Destination {data[0]?.name}</h1>
             <img src={data[0]?.image} alt=""/> */}
             <Container>
