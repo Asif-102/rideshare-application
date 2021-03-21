@@ -68,11 +68,11 @@ const Destination = () => {
                                     <h3>{pick.to}</h3>
                                 </div>
                                 <p><img src={data[0]?.image} height="60px" alt=""/>
-                                {' '}<span>{data[0]?.name}</span>{' '}<BsFillPersonFill/>4 {' '}${data[0]?.fare}</p><hr/>
+                                {' '}<span>__{data[0]?.name}</span>{' '}__<BsFillPersonFill/>4 {' '}____${data[0]?.fare}</p><hr/>
                                 <p><img src={data[0]?.image} height="60px" alt=""/>
-                                {' '}<span>{data[0]?.name}</span>{' '}<BsFillPersonFill/>4 {' '}${data[0]?.fare}</p><hr/>
+                                {' '}<span>__{data[0]?.name}</span>{' '}__<BsFillPersonFill/>4 {' '}____${data[0]?.fare}</p><hr/>
                                 <p><img src={data[0]?.image} height="60px" alt=""/>
-                                {' '}<span>{data[0]?.name}</span>{' '}<BsFillPersonFill/>4 {' '}${data[0]?.fare}</p>
+                                {' '}<span>__{data[0]?.name}</span>{' '}__<BsFillPersonFill/>4 {' '}____${data[0]?.fare}</p>
                             </div>
                         }
                     </Col>
