@@ -28,7 +28,8 @@ const Destination = () => {
     const [ready, setReady] = useState(false);
     const [pick, setPick] = useState({
         from:'',
-        to:''
+        to:'',
+        data:''
     })
     console.log(pick);
     const handleBlur = (e) =>{
@@ -57,6 +58,7 @@ const Destination = () => {
                                 <TextField type="text" id="standard-basic" onBlur={handleBlur} label="Pick From" name="from" required />
                                 
                                 <p><TextField type="text"  id="standard-basic" onBlur={handleBlur} label="Pick To" name="to" required /></p>
+                                <p><TextField type="date"  id="standard-basic" onBlur={handleBlur}  name="date" required /></p>
                                     <Button type="Submit">Search</Button>   
                             </form>
                         </div>
@@ -66,6 +68,7 @@ const Destination = () => {
                                     <h3>{pick.from}</h3>
                                     <h4 style={{color:'white'}}>To</h4>
                                     <h3>{pick.to}</h3>
+                                    <p>date: {pick.date}</p>
                                 </div>
                                 <p><img src={data[0]?.image} height="60px" alt=""/>
                                 {' '}<span>__{data[0]?.name}</span>{' '}__<BsFillPersonFill/>4 {' '}____${data[0]?.fare}</p><hr/>
