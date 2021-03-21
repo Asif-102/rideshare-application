@@ -28,6 +28,9 @@ function App() {
             <PrivateRoute path="/destination/:vehicleId">
               <Destination/>
             </PrivateRoute>
+            <PrivateRoute path="/destination/:vehicleId">
+              <Destination/>
+            </PrivateRoute>
             <Route path="/login">
               <Login/>
             </Route>

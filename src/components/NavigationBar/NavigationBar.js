@@ -80,6 +80,9 @@ const NavigationBar = () => {
   function handleClick(locate) {
     history.push(`/${locate}`);
   }
+  function handleDesti(id){
+    history.push(`/destination/${id}`)
+  }
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
@@ -137,7 +140,7 @@ const NavigationBar = () => {
         </IconButton>
       </MenuItem>
       <MenuItem>
-        <IconButton onClick={()=>handleClick('destination')} aria-label="show 4 new mails" color="inherit">
+        <IconButton onClick={()=>handleDesti(3)} aria-label="show 4 new mails" color="inherit">
             Destination
         </IconButton>
       </MenuItem>
@@ -176,7 +179,7 @@ const NavigationBar = () => {
             <IconButton onClick={()=>handleClick('home')} aria-label="show 4 new mails" color="inherit">
                 Home
             </IconButton>
-            <IconButton onClick={()=>handleClick('destination')} aria-label="show 4 new mails" color="inherit">
+            <IconButton onClick={()=>handleDesti(3)} aria-label="show 4 new mails" color="inherit">
                 Destination
             </IconButton>
             <IconButton aria-label="show 4 new mails" color="inherit">
